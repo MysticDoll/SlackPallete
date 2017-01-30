@@ -1,0 +1,31 @@
+{
+  "name": "slack-pallete",
+  "version": "1.0.0",
+  "description": "Create Slack Custom Emoji Art Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MysticDoll/SlackPallete.git"
+  },
+  "author": "Mitsuru Takigahira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MysticDoll/SlackPallete/issues"
+  },
+  "homepage": "https://github.com/MysticDoll/SlackPallete#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

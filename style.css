@@ -1,0 +1,8 @@
+.emoji-item, .emoji-cell {
+  width: 64px;
+  height: 64px;
+  border: .3px solid #333;
+}
+.emoji-item:hover {
+  border: .7px solid #8BC34A;
+}
