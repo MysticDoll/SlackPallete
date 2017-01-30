@@ -23,7 +23,7 @@ export default class Modal extends React.Component {
           height: "100%",
           top: "0",
           left: "0",
-          "background-color": "rgba(0, 0, 0, .8)"
+          backgroundColor: "rgba(0, 0, 0, .8)"
         }}
       >
       <div className={"modal-body"}
@@ -31,7 +31,7 @@ export default class Modal extends React.Component {
           width: "600px",
           height: "250px",
           margin: "20% 40%",
-          "background-color": "#FFF"
+          backgroundColor: "#FFF"
         }}
       >
         <textarea

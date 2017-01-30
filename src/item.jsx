@@ -19,6 +19,7 @@ export default class Item extends Emoji {
         src={this.emoji()}
         onClick={this.selectEmoji.bind(this)}
         className={"emoji-item"}
+        title={`:${this.state.emojiRaw}:`}
       />
     );
   }

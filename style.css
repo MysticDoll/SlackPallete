@@ -6,3 +6,6 @@
 .emoji-item:hover {
   border: .7px solid #8BC34A;
 }
+.emoji-item[title]:hover:after, .emoji-cell[title]:hover:after {
+  content: title;
+}

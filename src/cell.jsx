@@ -20,6 +20,7 @@ export default class Cell extends Emoji {
         src={this.emoji()}
         onClick={this.changeEmoji.bind(this)}
         className={"emoji-cell"}
+        title={`:${this.state.emojiRaw}:`}
       />
     );
   }
