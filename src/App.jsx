@@ -7,7 +7,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentEmoji: "blank",
+      currentEmoji: this.props.blankSymbol,
       modalVisible: false
     };
   }
@@ -41,6 +41,7 @@ export default class App extends React.Component {
               getCurrentEmoji={this.getCurrentEmoji.bind(this)}
               getEmoji={this.getEmoji.bind(this)}
               updateCanvas={this.updateCanvas.bind(this)}
+              blankSymbol={this.props.blankSymbol}
             ></Cell>
           )
         }

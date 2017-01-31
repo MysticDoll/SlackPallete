@@ -5,7 +5,7 @@ export default class Cell extends Emoji {
   constructor(props) {
     super(props);
     this.state = {
-      emojiRaw: "blank"
+      emojiRaw: this.props.blankSymbol
     };
   }
 
