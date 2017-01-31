@@ -7,14 +7,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentEmoji: "__blank__",
+      currentEmoji: "blank",
       modalVisible: false
     };
   }
 
   getEmoji(name) {
     let emoji = this.props.emojiList[name];
-    return emoji ? emoji : this.props.emojiList["__blank__"];
+    return emoji ? emoji : this.props.emojiList["blank"];
   }
 
   getCurrentEmoji() {

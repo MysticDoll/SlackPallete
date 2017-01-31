@@ -16,14 +16,14 @@ fetcher.addEventListener("click", () => {
     .then((emojiList) => {
       let list = Object.assign(
           {
-            "__blank__": "./blank.png"
+            "blank": "./blank.png"
           },
           emojiList
       );
       let canvas = Array(parseInt(row.value)).fill()
                     .map(() =>
                       Array(parseInt(column.value)).fill()
-                        .map(() => "__blank__")
+                        .map(() => "blank")
                     );
       render(
         <App emojiList={list} canvas={canvas}></App>,
