@@ -53,7 +53,14 @@ export default class App extends React.Component {
       <div>
         {
           Object.keys(this.props.emojiList)
-            .map(emoji => <Item emoji={emoji} setCurrentEmoji={this.setCurrentEmoji.bind(this)} getEmoji={this.getEmoji.bind(this)}></Item>)
+            .map(emoji => (
+              <Item
+                emoji={emoji}
+                setCurrentEmoji={this.setCurrentEmoji.bind(this)}
+                getCurrentEmoji={this.getCurrentEmoji.bind(this)}
+                getEmoji={this.getEmoji.bind(this)}
+              ></Item>
+            ))
         }
       </div>
     );

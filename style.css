@@ -9,3 +9,7 @@
 .emoji-item[title]:hover:after, .emoji-cell[title]:hover:after {
   content: title;
 }
+
+.emoji-item.emoji-item-selected {
+  border: 3px solid #009688;
+}
