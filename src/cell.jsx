@@ -12,7 +12,7 @@ export default class Cell extends Emoji {
   changeEmoji() {
     this.setState({emojiRaw: this.props.getCurrentEmoji()});
   }
-  
+
   render() {
     this.props.updateCanvas(this.props.row, this.props.column, this.state.emojiRaw);
     return (

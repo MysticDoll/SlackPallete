@@ -32,10 +32,11 @@ export default class App extends React.Component {
 
   createCells() {
     return this.props.canvas.map((row, i) => 
-      <div>
+      <div key={i}>
         {
           row.map((cell, j) =>
             <Cell
+              key={j}
               row={i}
               column={j}
               getCurrentEmoji={this.getCurrentEmoji.bind(this)}
@@ -56,6 +57,7 @@ export default class App extends React.Component {
           Object.keys(this.props.emojiList)
             .map(emoji => (
               <Item
+                key={emoji}
                 emoji={emoji}
                 setCurrentEmoji={this.setCurrentEmoji.bind(this)}
                 getCurrentEmoji={this.getCurrentEmoji.bind(this)}
