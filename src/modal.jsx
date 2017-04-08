@@ -5,8 +5,12 @@ export default class Modal extends React.Component {
     super(props);
   }
 
+  removeVerboseBlank(rawValue) {
+    return rawValue.replace(new RegExp(`(:${this.props.blankSymbol}:)+($|\\n)`, "g"), "\n");
+  }
+
   getRaw() {
-    return this.props.getRawEmoji();
+    return this.removeVerboseBlank(this.props.getRawEmoji());
   }
 
   closeModal() {

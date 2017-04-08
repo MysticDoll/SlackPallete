@@ -106,6 +106,7 @@ export default class App extends React.Component {
           visible={this.getVisibility()}
           getRawEmoji={this.getRawEmoji.bind(this)}
           switchVisible={this.switchVisible.bind(this)}
+          blankSymbol={this.props.blankSymbol}
         ></Modal>
       </div>
     );
