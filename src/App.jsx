@@ -62,6 +62,7 @@ export default class App extends React.Component {
                 setCurrentEmoji={this.setCurrentEmoji.bind(this)}
                 getCurrentEmoji={this.getCurrentEmoji.bind(this)}
                 getEmoji={this.getEmoji.bind(this)}
+                blankSymbol={this.props.blankSymbol}
               ></Item>
             ))
         }

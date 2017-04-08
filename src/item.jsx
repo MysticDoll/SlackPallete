@@ -9,8 +9,9 @@ export default class Item extends Emoji {
     };
   }
 
-  selectEmoji() {
+  selectEmoji(e) {
     this.props.setCurrentEmoji(this.state.emojiRaw);
+    e.preventDefault();
   }
 
   isSelected() {
@@ -22,6 +23,7 @@ export default class Item extends Emoji {
       <img
         src={this.emoji()}
         onClick={this.selectEmoji.bind(this)}
+        onDragStart={this.selectEmoji.bind(this)}
         className={`emoji-item ${this.isSelected.bind(this)()}`}
         title={`:${this.state.emojiRaw}:`}
       />
