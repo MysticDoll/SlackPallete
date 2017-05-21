@@ -11,6 +11,7 @@ export default class Cell extends Emoji {
 
   changeEmoji() {
     this.setState({emojiRaw: this.props.getCurrentEmoji()});
+    this.props.updateCanvas(this.props.row, this.props.column, this.props.getCurrentEmoji());
   }
 
   mouseMove(e) {
@@ -20,7 +21,6 @@ export default class Cell extends Emoji {
   }
 
   render() {
-    this.props.updateCanvas(this.props.row, this.props.column, this.state.emojiRaw);
     return (
       <img
         src={this.emoji()}
