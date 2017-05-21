@@ -21,7 +21,7 @@ fetcher.addEventListener("click", () => {
       let canvas = Array(parseInt(row.value)).fill()
                     .map(() =>
                       Array(parseInt(column.value)).fill()
-                        .map(() => "blank")
+                        .map(() => blankSymbol.value)
                     );
       render(
         <App emojiList={list} canvas={canvas} blankSymbol={blankSymbol.value}></App>,

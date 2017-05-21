@@ -7,6 +7,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      canvas: this.props.canvas,
       currentEmoji: this.props.blankSymbol,
       modalVisible: false
     };
@@ -26,12 +27,13 @@ export default class App extends React.Component {
   }
 
   updateCanvas(row, column, item) {
-    this.props.canvas[row][column] = item;
-    this.render();
+    let canvas = this.state.canvas;
+    canvas[row][column] = item;
+    this.setState({canvas: canvas});
   }
 
   createCells() {
-    return this.props.canvas.map((row, i) => 
+    return this.state.canvas.map((row, i) => 
       <div key={i}>
         {
           row.map((cell, j) =>
@@ -75,7 +77,7 @@ export default class App extends React.Component {
   }
 
   getRawEmoji() {
-    return this.props.canvas.map(row => row.map(e => `:${e}:`).join("")).join("\n");
+    return this.state.canvas.map(row => row.map(e => `:${e}:`).join("")).join("\n");
   }
 
   getVisibility() {
