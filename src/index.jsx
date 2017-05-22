@@ -29,3 +29,5 @@ fetcher.addEventListener("click", () => {
       );
     });
 });
+
+[fetcher, token, row, column, blankSymbol].forEach(e => e.addEventListener("keypress", event => event.key === "Enter" ? fetcher.click() : false));
