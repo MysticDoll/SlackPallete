@@ -1,5 +1,5 @@
 import React from "react";
-import {render} from "react-dom";
+import {render, unmountComponentAtNode} from "react-dom";
 import App from "./App.jsx";
 import fetchEmoji from "./fetchEmoji";
 import emojiParser from "./emojiParser";
@@ -23,6 +23,7 @@ fetcher.addEventListener("click", () => {
                       Array(parseInt(column.value)).fill()
                         .map(() => blankSymbol.value)
                     );
+      unmountComponentAtNode(container);
       render(
         <App emojiList={list} canvas={canvas} blankSymbol={blankSymbol.value}></App>,
         container
