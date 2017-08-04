@@ -1,23 +1,14 @@
 import React from "react";
 import Emoji from "./common/emoji.jsx";
+import Manager from "./Manager/CanvasManager";
 
 export default class Cell extends Emoji {
   constructor(props) {
     super(props);
     this.state = {
-      emojiRaw: this.props.blankSymbol
+      emojiRaw: props.parent.props.blankSymbol
     };
-  }
-
-  changeEmoji() {
-    this.setState({emojiRaw: this.props.getCurrentEmoji()});
-    this.props.updateCanvas(this.props.row, this.props.column, this.props.getCurrentEmoji());
-  }
-
-  mouseMove(e) {
-    if(e.buttons === 1) {
-      this.changeEmoji();
-    }
+    this.manager = new Manager(props.parent, this);
   }
 
   render() {
@@ -25,8 +16,8 @@ export default class Cell extends Emoji {
       <img
         src={this.emoji()}
         draggable={"false"}
-        onClick={this.changeEmoji.bind(this)}
-        onMouseMove={this.mouseMove.bind(this)}
+        onClick={this.manager.changeEmoji}
+        onMouseMove={this.manager.mouseMove()}
         className={"emoji-cell"}
         title={`:${this.state.emojiRaw}:`}
       />

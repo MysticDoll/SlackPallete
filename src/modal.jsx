@@ -1,20 +1,10 @@
 import React from "react";
+import Manager from "./Manager/ModalManager";
 
 export default class Modal extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  removeVerboseBlank(rawValue) {
-    return rawValue.replace(new RegExp(`(:${this.props.blankSymbol}:)+($|\\n)`, "g"), "\n");
-  }
-
-  getRaw() {
-    return this.removeVerboseBlank(this.props.getRawEmoji());
-  }
-
-  closeModal() {
-    this.props.switchVisible();
+    this.manager = new Manager(props.parent, this);
   }
 
   render() {
@@ -40,14 +30,14 @@ export default class Modal extends React.Component {
       >
         <textarea
           readOnly={true}
-          value={this.getRaw.bind(this)()}
+          value={this.manager.getRaw()}
           style={{
             width: "500px",
             height: "180px",
             display: "block"
           }}
         ></textarea>
-        <button className={"btn btn-default"} onClick={this.closeModal.bind(this)}>Close</button>
+        <button className={"btn btn-default"} onClick={this.manager.closeModal()}>Close</button>
         </div>
       </div>
     );
