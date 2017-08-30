@@ -41,10 +41,7 @@ export default class App extends React.Component {
               key={j}
               row={i}
               column={j}
-              getCurrentEmoji={this.getCurrentEmoji.bind(this)}
-              getEmoji={this.getEmoji.bind(this)}
-              updateCanvas={this.updateCanvas.bind(this)}
-              blankSymbol={this.props.blankSymbol}
+              parent={this}
             ></Cell>
           )
         }
@@ -61,10 +58,7 @@ export default class App extends React.Component {
               <Item
                 key={emoji}
                 emoji={emoji}
-                setCurrentEmoji={this.setCurrentEmoji.bind(this)}
-                getCurrentEmoji={this.getCurrentEmoji.bind(this)}
-                getEmoji={this.getEmoji.bind(this)}
-                blankSymbol={this.props.blankSymbol}
+                parent={this}
               ></Item>
             ))
         }
@@ -72,8 +66,8 @@ export default class App extends React.Component {
     );
   }
 
-  switchVisible() {
-    this.setState({modalVisible: !this.state.modalVisible});
+  get switchVisible() {
+    return () => this.setState({modalVisible: !this.state.modalVisible});
   }
 
   getRawEmoji() {
@@ -95,7 +89,7 @@ export default class App extends React.Component {
             {this.createCells()}
           </div>
         </div>
-        <button className="btn btn-info" onClick={this.switchVisible.bind(this)}>Export</button>
+        <button className="btn btn-info" onClick={this.switchVisible}>Export</button>
         <div className={"row"}>
           <div className={"emoji-pallete col-md-12"}>
             <h2>Pallete</h2>
@@ -106,9 +100,7 @@ export default class App extends React.Component {
         </div>
         <Modal
           visible={this.getVisibility()}
-          getRawEmoji={this.getRawEmoji.bind(this)}
-          switchVisible={this.switchVisible.bind(this)}
-          blankSymbol={this.props.blankSymbol}
+          parent={this}
         ></Modal>
       </div>
     );

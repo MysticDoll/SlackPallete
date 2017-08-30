@@ -1,5 +1,6 @@
 import React from "react";
 import Emoji from "./common/emoji.jsx";
+import Manager from "./Manager/PalleteManager";
 
 export default class Item extends Emoji {
   constructor(props) {
@@ -7,24 +8,16 @@ export default class Item extends Emoji {
     this.state = {
       emojiRaw: this.props.emoji
     };
-  }
-
-  selectEmoji(e) {
-    this.props.setCurrentEmoji(this.state.emojiRaw);
-    e.preventDefault();
-  }
-
-  isSelected() {
-    return this.props.getCurrentEmoji() === this.state.emojiRaw ? "emoji-item-selected" : "";
+    this.manager = new Manager(props.parent, this);
   }
 
   render() {
     return (
       <img
         src={this.emoji()}
-        onClick={this.selectEmoji.bind(this)}
-        onDragStart={this.selectEmoji.bind(this)}
-        className={`emoji-item ${this.isSelected.bind(this)()}`}
+        onClick={this.manager.selectEmoji}
+        onDragStart={this.manager.selectEmoji}
+        className={`emoji-item ${this.manager.isSelected()}`}
         title={`:${this.state.emojiRaw}:`}
       />
     );

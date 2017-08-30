@@ -5,6 +5,6 @@ export default class Emoji extends React.Component {
   }
 
   emoji() {
-    return this.props.getEmoji(this.state.emojiRaw);
+    return this.manager.getEmoji(this.state.emojiRaw);
   }
 }
